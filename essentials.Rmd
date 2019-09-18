@@ -87,7 +87,11 @@ Anda dapat memasang paket yang berasal dari CRAN dengan menggunakan fungsi `inst
 
 Penting untuk diingat bahwa Anda harus mengaktifkan paket terlebih dahulu setiap memulai sesi analsisis untuk dapat menggunakan fungsi-fungsi yang terdapat pada paket tersebut. Hal tersebut dapat dilakukan dengan menggunakan fungsi `library(nama_paket)`.
 
-## Impor data
+## Studi Kasus
+
+Dalam pelatihan singkat ini Anda diminta untuk melakukan analisis terhadap lukisan Bob Ross yang dihimpun dari acara "The Joy of Painting". Anda diminta untuk mencoba membuat kembali grafik yang terdapat dalam laman https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/.
+
+
 
 Studi kasus dalam latihan singkat ini adalah Anda diminta untuk melakukan analisis terhadap data Film Indonesia yang telah dikumpulkan sejak tahun 1926. Data tersebut tersedia sebagai berkas CSV dengan nama 'filmindonesia.csv' di dalam subdirektori 'data'. Bagaimana cara untuk mengimpor berkas CSV tersebut sehingga dapat diolah dan dianalisis menggunakan R? Anda dapat memanfaatkan fungsi `read_csv()` dari paket `readr` untuk melakukan hal tersebut. Sekarang aktifkanlah paket `readr` terlebih dahulu dan selanjutnya silakan impor 'filmindonesia.csv' sebagai obyek R bernama 'filmindonesia'!
 
