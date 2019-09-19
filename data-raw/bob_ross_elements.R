@@ -31,4 +31,4 @@ bob_ross_elements <-
   arrange(desc(n)) %>%
   dplyr::filter(n > 5)
 
-write_csv(bob_ross_elements, "data/bob_ross_elements.csv")
+write_csv(bob_ross_elements, "data/bob-ross-elements.csv")
