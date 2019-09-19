@@ -95,7 +95,13 @@ plot(iris) # ___
 
 Meskipun R telah memiliki banyak fungsi bawaan yang sangat bermanfaat, tidak jarang Anda memerlukan fungsionalitas lain yang tidak tersedia langsung di R. Di bahasa pemrograman R terdapat sistem ekstensi yang disebut sebagai paket. Anda dapat melakukan banyak hal dan berbagai tujuan dengan cara memasang paket yang sesuai. Terdapat berbagai sumber repositori tempat paket-paket tersebut tersimpan secara daring, diantaranya adalah CRAN (Comprehensive R Archive Network), GitHub, dan Bioconductor.
 
-Anda dapat memasang paket yang berasal dari CRAN dengan menggunakan fungsi `install.packages("nama_paket")`. Pada RStudio Anda juga dapat melakukan hal tersebut melalui menu "Tools-Install Packages". Sekarang cobalah pasang paket "readr" dan "ggplot2"!
+Anda dapat memasang paket yang berasal dari CRAN dengan menggunakan fungsi `install.packages("nama_paket")`. Pada RStudio Anda juga dapat melakukan hal tersebut melalui menu "Tools-Install Packages". Sekarang cobalah pasang paket "`readr`", "`ggplot2`", dan "`remotes`"!
+
+Pada prosedur di atas Anda telah berhasil memasang paket yang berasal dari Comprehensive R Archive Network (CRAN). Namun bagaimana jika Anda juga ingin memasang paket yang tidak berasal dari CRAN? Contohnya Anda ingin memasang paket yang tersedia dari GitHub pada di https://github.com/yonghah/esri2sf. Hal tersebut dapat dilakukan dengan menggunakan fungsi dari paket `remotes` yang telah Anda pasang. Jalankanlah baris kode berikut pada konsol RStudio Anda!
+
+```{r, eval = FALSE}
+remotes::install_github("yonghah/esri2sf")
+```
 
 Penting untuk diingat bahwa Anda harus mengaktifkan paket terlebih dahulu setiap memulai sesi analsisis untuk dapat menggunakan fungsi-fungsi yang terdapat pada paket tersebut. Hal tersebut dapat dilakukan dengan menggunakan fungsi `library(nama_paket)`.
 
@@ -150,13 +156,13 @@ ggplot(data = bob_ross_elements, aes(x = element, y = pct)) +
 
 Selamat Anda telah berhasil membuat grafik menggunakan `ggplot2`! Grafik dasar tersebut pada prinsipnya telah dapat memvisualisasikan informasi yang terdapat pada data `bob_ross_elements`. Namun pertanyaannya adalah apakah informasi yang terdapat pada grafik tersebut dapat dengan mudah dibaca dan dicerna oleh pembaca?
 
-Anda tentu menyadari ada banyak hal yang harus dilakukan untuk membuat grafik tersebut menjadi lebih menarik serta mudah dimengerti. Sekarang tugas Anda adalah melakukan kostumisasi grafik tersebut sehingga dapat menyerupai grafik di bawah ini:
+Anda tentu menyadari ada banyak hal yang harus dilakukan untuk membuat grafik tersebut menjadi lebih menarik serta mudah dimengerti. Sekarang tugas kita adalah melakukan kostumisasi grafik tersebut sehingga dapat menyerupai grafik di bawah ini:
 
 ```{r}
 knitr::include_graphics("asset/bob-ross-elements.png")
 ```
 
-Berikut merupakan beberapa poin penting dan tugas kostumisasi grafik yang dapat Anda kerjakan:
+Berikut merupakan beberapa poin penting dan tugas kostumisasi grafik yang akan dikerjakan:
 
 + Menukar posisi sumbu x dan sumbu y
 + Mengurutkan posisi elemen dari persentase terbesar hingga terkecil
