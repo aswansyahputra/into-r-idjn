@@ -1,4 +1,5 @@
 library(tidyverse)
+library(janitor)
 
 elements_by_episode <-
   read_csv(
@@ -6,20 +7,19 @@ elements_by_episode <-
   )
 
 tidy_elements <-
-  elements_by_episode %>%
-  janitor::clean_names() %>%
-  gather("element", "present", -episode, -title) %>%
+  elements_by_episode %>% 
+  clean_names() %>% 
+  pivot_longer(cols = c(apple_frame:wood_framed), names_to = "element", values_to = "present") %>% 
   mutate(
-    title = str_remove_all(title, '"') %>%
-      str_to_title(),
-    element = str_replace_all(element, "_", " ") %>%
-      str_to_title()
-  )
+    title = str_remove_all(title, '"'),
+    element = str_replace_all(element, "_", " ")
+  ) %>% 
+  mutate_if(is.character, str_to_upper) 
 
 non_bob_ross_painting <-
   tidy_elements %>%
-  dplyr::filter(element %in% c("Guest", "Steve Ross"),
-                present == 1) %>%
+  filter(element %in% c("GUEST", "STEVE ROSS"),
+                present == 1) %>% 
   distinct(episode)
 
 bob_ross_elements <-
@@ -29,6 +29,6 @@ bob_ross_elements <-
   summarise(n = sum(present),
             pct = 100 * mean(present)) %>%
   arrange(desc(n)) %>%
-  dplyr::filter(n > 5)
+  filter(n > 5)
 
 write_csv(bob_ross_elements, "data/bob-ross-elements.csv")
